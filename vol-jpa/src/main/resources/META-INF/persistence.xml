@@ -8,12 +8,10 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
 		<class>sopra.promo404.vol.model.Aeroport</class>
-		<class>sopra.promo404.vol.model.Civilite</class>
 		<class>sopra.promo404.vol.model.Client</class>
 		<class>sopra.promo404.vol.model.CompagnieAerienne</class>
 		<class>sopra.promo404.vol.model.CompagnieAerienneVol</class>
 		<class>sopra.promo404.vol.model.Escale</class>
-		<class>sopra.promo404.vol.model.FormeJuridique</class>
 		<class>sopra.promo404.vol.model.Login</class>
 		<class>sopra.promo404.vol.model.Particulier</class>
 		<class>sopra.promo404.vol.model.Passager</class>
