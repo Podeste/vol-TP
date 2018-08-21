@@ -33,6 +33,7 @@ public class Reservation {
 	private Client client;
 
 	public Reservation() {
+
 	}
 
 	public Long getId() {
