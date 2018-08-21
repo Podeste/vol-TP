@@ -22,7 +22,7 @@
 		
 		<properties>
 			<property name="hibernate.connection.url"
-				value="jdbc:postgresql://localhost:5432/formation-jpa" />
+				value="jdbc:postgresql://localhost:5432/vol-jpa" />
 			<property name="hibernate.connection.driver"
 				value="org.postgresql.Driver" />
 			<property name="hibernate.connection.user" value="postgres" />
