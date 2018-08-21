@@ -11,6 +11,7 @@ import sopra.promo404.vol.Singleton;
 import sopra.promo404.vol.dao.IDaoVille;
 import sopra.promo404.vol.model.Ville;
 
+
 public class DaoVilleJpa implements IDaoVille{
 	
 	@Override
@@ -151,5 +152,38 @@ public class DaoVilleJpa implements IDaoVille{
 				em.close();
 			}
 		}
+	}
+
+	@Override
+	public Ville findByNom(String nom) {
+		Ville entity = null;
+
+		EntityManager em = null;
+		EntityTransaction tx = null;
+
+		try {
+			em = Singleton.getInstance().getEmf().createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			
+			Query query = em.createQuery("select v from Ville v where v.nom = :nom");
+
+			query.setParameter("nom", nom);
+			
+			entity = (Ville) query.getResultList().get(0);
+
+			tx.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			if (tx != null) {
+				tx.rollback();
+			}
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+
+		return entity;
 	}
 }

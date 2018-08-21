@@ -15,37 +15,37 @@ public class TestAeroportVille {
 		IDaoVille daoVille = Singleton.getInstance().getDaoVille();
 		
 		AeroportVille av1 = new AeroportVille();
-		Aeroport jfk = daoAeroport.findById(30L);
+		Aeroport jfk = daoAeroport.findByCode("JFK");
 		av1.setAeroport(jfk);
-		Ville newyork = daoVille.findById(10L);
+		Ville newyork = daoVille.findByNom("New York");
 		av1.setVille(newyork);
 		daoAeroportVille.save(av1);
 		
 		AeroportVille av2 = new AeroportVille();
-		Aeroport cdg = daoAeroport.findById(31L);
+		Aeroport cdg = daoAeroport.findByCode("CDG");
 		av2.setAeroport(cdg);
-		Ville paris = daoVille.findById(5L);
+		Ville paris = daoVille.findByNom("Paris");
 		av2.setVille(paris);
 		daoAeroportVille.save(av2);
 		
 		AeroportVille av3 = new AeroportVille();
-		Aeroport orly = daoAeroport.findById(32L);
+		Aeroport orly = daoAeroport.findByCode("ORL");
 		av3.setAeroport(orly);
 		
 		av3.setVille(paris);
 		daoAeroportVille.save(av3);
 		
 		AeroportVille av4 = new AeroportVille();
-		Aeroport lax = daoAeroport.findById(33L);
+		Aeroport lax = daoAeroport.findByCode("LAX");
 		av4.setAeroport(lax);
-		Ville losangeles = daoVille.findById(11L);
+		Ville losangeles = daoVille.findByNom("Los Angeles");
 		av4.setVille(losangeles);
 		daoAeroportVille.save(av4);
 		
 		AeroportVille av5 = new AeroportVille();
-		Aeroport merignac = daoAeroport.findById(34L);
+		Aeroport merignac = daoAeroport.findByCode("BDX");
 		av5.setAeroport(merignac);
-		Ville bordeaux = daoVille.findById(9L);
+		Ville bordeaux = daoVille.findByNom("Bordeaux");
 		av5.setVille(bordeaux);
 		daoAeroportVille.save(av5);
 		

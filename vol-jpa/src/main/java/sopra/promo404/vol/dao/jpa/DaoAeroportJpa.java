@@ -70,6 +70,39 @@ public class DaoAeroportJpa implements IDaoAeroport {
 
 		return entity;
 	}
+	
+	@Override
+	public Aeroport findByCode(String code) {
+		Aeroport entity = null;
+
+		EntityManager em = null;
+		EntityTransaction tx = null;
+
+		try {
+			em = Singleton.getInstance().getEmf().createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			
+			Query query = em.createQuery("select a from Aeroport a where a.code = :code");
+
+			query.setParameter("code", code);
+			
+			entity = (Aeroport) query.getResultList().get(0);
+
+			tx.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			if (tx != null) {
+				tx.rollback();
+			}
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+
+		return entity;
+	}
 
 	@Override
 	public Aeroport save(Aeroport entity) {
