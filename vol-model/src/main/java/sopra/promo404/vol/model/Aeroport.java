@@ -15,7 +15,7 @@ public class Aeroport {
 	@Column(name = "aeroport_id")
 	private Long id;
 	private String code;
-	@OneToMany
+	@OneToMany(mappedBy = "aeroport")
 	private List<AeroportVille> aeroportsvilles = new ArrayList<>();
 	public List<AeroportVille> getAeroportsVilles() {
 		return aeroportsvilles;

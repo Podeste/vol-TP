@@ -8,13 +8,14 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoAeroport;
-import sopra.promo404.vol.model.Aeroport;
+import sopra.promo404.vol.dao.IDaoVille;
+import sopra.promo404.vol.model.Ville;
 
-public class DaoAeroportJpa implements IDaoAeroport {
+public class DaoVilleJpa implements IDaoVille{
+	
 	@Override
-	public List<Aeroport> findAll() {
-		List<Aeroport> liste = new ArrayList<>();
+	public List<Ville> findAll() {
+		List<Ville> liste = new ArrayList<>();
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -24,7 +25,7 @@ public class DaoAeroportJpa implements IDaoAeroport {
 			tx = em.getTransaction();
 			tx.begin();
 
-			Query query = em.createQuery("from Aeroport", Aeroport.class);
+			Query query = em.createQuery("from Ville", Ville.class);
 			liste = query.getResultList();
 
 			tx.commit();
@@ -43,8 +44,8 @@ public class DaoAeroportJpa implements IDaoAeroport {
 	}
 
 	@Override
-	public Aeroport findById(Long id) {
-		Aeroport entity = null;
+	public Ville findById(Long id) {
+		Ville entity = null;
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -54,7 +55,7 @@ public class DaoAeroportJpa implements IDaoAeroport {
 			tx = em.getTransaction();
 			tx.begin();
 
-			entity = em.find(Aeroport.class, id);
+			entity = em.find(Ville.class, id);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -72,7 +73,7 @@ public class DaoAeroportJpa implements IDaoAeroport {
 	}
 
 	@Override
-	public Aeroport save(Aeroport entity) {
+	public Ville save(Ville entity) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -81,7 +82,7 @@ public class DaoAeroportJpa implements IDaoAeroport {
 			tx = em.getTransaction();
 			tx.begin();
 
-			if (em.find(Aeroport.class, entity.getId()) == null) {
+			if (em.find(Ville.class, entity.getId()) == null) {
 				em.persist(entity);
 			} else {
 				entity = em.merge(entity);
@@ -103,7 +104,7 @@ public class DaoAeroportJpa implements IDaoAeroport {
 	}
 
 	@Override
-	public void delete(Aeroport entity) {
+	public void delete(Ville entity) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -137,7 +138,7 @@ public class DaoAeroportJpa implements IDaoAeroport {
 			tx = em.getTransaction();
 			tx.begin();
 
-			em.remove(em.find(Aeroport.class, id));
+			em.remove(em.find(Ville.class, id));
 
 			tx.commit();
 		} catch (Exception e) {
@@ -151,5 +152,4 @@ public class DaoAeroportJpa implements IDaoAeroport {
 			}
 		}
 	}
-
 }

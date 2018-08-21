@@ -3,11 +3,12 @@
 	xmlns="http://java.sun.com/xml/ns/persistence"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistencehttp://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-	<persistence-unit name="formation"
+	<persistence-unit name="vol"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
 		<class>sopra.promo404.vol.model.Aeroport</class>
+		<class>sopra.promo404.vol.model.AeroportVille</class>
 		<class>sopra.promo404.vol.model.Client</class>
 		<class>sopra.promo404.vol.model.CompagnieAerienne</class>
 		<class>sopra.promo404.vol.model.CompagnieAerienneVol</class>

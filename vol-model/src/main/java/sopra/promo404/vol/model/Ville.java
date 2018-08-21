@@ -16,7 +16,8 @@ public class Ville {
 	private Long id;
 	private String nom;
 	private String codePostal;
-	@OneToMany
+	
+	@OneToMany(mappedBy = "ville")
 	private List<AeroportVille> aeroportsvilles = new ArrayList<>();
 	
 	public List<AeroportVille> getAeroportsVilles() {

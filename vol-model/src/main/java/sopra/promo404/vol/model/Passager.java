@@ -1,13 +1,12 @@
 package sopra.promo404.vol.model;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
 
@@ -24,7 +23,9 @@ public class Passager {
 	private String pieceIdentite;
 	@Embedded
 	private Adresse adresse;
-	private List<Reservation> reservations = new ArrayList<>();
+	@OneToOne
+	@JoinColumn
+	private Reservation reservation;
 
 	public Passager() {
 	}
@@ -77,12 +78,12 @@ public class Passager {
 		this.adresse = adresse;
 	}
 
-	public List<Reservation> getReservations() {
-		return reservations;
+	public Reservation getReservation() {
+		return reservation;
 	}
 
-	public void setReservations(List<Reservation> reservations) {
-		this.reservations = reservations;
+	public void setReservations(Reservation reservation) {
+		this.reservation = reservation;
 	}
 
 }
