@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 @Entity
 public class Ville {
 	@Id
@@ -55,7 +56,7 @@ public class Ville {
 	}
 
 	
-	
+	@Version
 	private int version;
 	public int getVersion() {
 		return version;

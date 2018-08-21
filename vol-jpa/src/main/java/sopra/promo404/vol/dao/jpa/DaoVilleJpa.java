@@ -82,7 +82,7 @@ public class DaoVilleJpa implements IDaoVille{
 			tx = em.getTransaction();
 			tx.begin();
 
-			if (em.find(Ville.class, entity.getId()) == null) {
+			if (entity.getId() == null) {
 				em.persist(entity);
 			} else {
 				entity = em.merge(entity);

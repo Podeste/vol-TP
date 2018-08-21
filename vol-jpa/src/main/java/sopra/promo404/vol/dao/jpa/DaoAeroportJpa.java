@@ -81,7 +81,7 @@ public class DaoAeroportJpa implements IDaoAeroport {
 			tx = em.getTransaction();
 			tx.begin();
 
-			if (em.find(Aeroport.class, entity.getId()) == null) {
+			if (entity.getId() == null) {
 				em.persist(entity);
 			} else {
 				entity = em.merge(entity);
