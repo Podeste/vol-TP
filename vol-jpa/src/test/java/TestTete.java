@@ -1,3 +1,4 @@
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import sopra.promo404.vol.Singleton;
@@ -16,13 +17,18 @@ import sopra.promo404.vol.model.Societe;
 
 public class TestTete {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	IDaoClient daoClient = Singleton.getInstance().getDaoClient(); 
 	IDaoPassager daoPassager = Singleton.getInstance().getDaoPassager(); 
 	IDaoLogin daoLogin = Singleton.getInstance().getDaoLogin(); 
 	
+	Login bute =new Login(); 
+	bute.setIdentifiant("Buuut");
+	bute.setMotDePasse("capout");
+	bute.setAdmin(true);
+	daoLogin.save(bute); 
 	
 	Societe but = new Societe();
 	but.setNom("But");
@@ -32,18 +38,21 @@ public class TestTete {
 	but.setAdresse(new Adresse("3 rue de la Cave", "33700", "Merignac", "France"));
 	but.setSiret("256985");
 	but.setFormeJuridique(FormeJuridique.SARL);
-	 
+	
+	 but.setLogin(bute);
 	daoClient.save(but); 
 	
-	Login bute =new Login(); 
-	bute.setIdentifiant("Buuut");
-	bute.setMotDePasse("capout");
-	bute.setAdmin(true);
-	
-	daoLogin.save(bute); 
-	but.setLogin(bute);
 	
 	
+	
+	
+	
+	
+	Login ssteria =new Login(); 
+	ssteria.setIdentifiant("Ssteria");
+	ssteria.setMotDePasse("vivelebillard");
+	ssteria.setAdmin(true);
+	daoLogin.save(ssteria); 
 	
 	
 	Societe sopra = new Societe();
@@ -55,15 +64,15 @@ public class TestTete {
 	sopra.setSiret("256985");
 	sopra.setFormeJuridique(FormeJuridique.SARL);
 	 
+	sopra.setLogin(ssteria);
 	daoClient.save(sopra); 
 	
-	Login ssteria =new Login(); 
-	ssteria.setIdentifiant("Ssteria");
-	ssteria.setMotDePasse("vivelebillard");
-	ssteria.setAdmin(true);
+	Login huguesd =new Login(); 
+	huguesd.setIdentifiant("Huguesd");
+	huguesd.setMotDePasse("vivelegolf");
+	huguesd.setAdmin(true);
 	
-	daoLogin.save(ssteria); 
-	sopra.setLogin(ssteria); 
+	daoLogin.save(huguesd);
 	
 	
 	Particulier hugues = new Particulier(); 
@@ -73,8 +82,16 @@ public class TestTete {
 	hugues.setNumeroTel("0623232323");
 	hugues.setNumeroFax("5217756");
 	hugues.setEmail("huguesdelatourblanche@hotmail.fr");
-	
+	hugues.setAdresse(new Adresse("15 rue de la Tour Noire", "56000", "Metz", "France"));
+	 hugues.setLogin(huguesd);
 	daoClient.save(hugues); 
+  
+	 Login fernandc =new Login(); 
+	fernandc.setIdentifiant("Fernandc");
+	fernandc.setMotDePasse("vivelepolo");
+	fernandc.setAdmin(false);
+	
+	daoLogin.save(fernandc); 
 	
 	Particulier fernand = new Particulier(); 
 	fernand.setPrenom("Fernand");
@@ -83,8 +100,15 @@ public class TestTete {
 	fernand.setNumeroTel("0614155222");
 	fernand.setNumeroFax("5364584");
 	fernand.setEmail("fernandcompte@hotmail.fr");
-	
+	fernand.setAdresse(new Adresse("15 rue de la Tour Blanche", "25151", "Dijon", "France"));
+	fernand.setLogin(fernandc); 
 	daoClient.save(fernand); 
+	
+	
+	
+
+	
+	
 		
 	
 	
@@ -94,6 +118,7 @@ public class TestTete {
 	jeanclaude.setPrenom("Jean-Claude");
 	jeanclaude.setPieceIdentite("12155");
 	jeanclaude.setAdresse(new Adresse("12 rue de la Marne", "75699", "Paris", "France"));
+	jeanclaude.setDtNaissance(sdf.parse("02/02/1954"));
 	
 	daoPassager.save(jeanclaude);
 	
@@ -102,6 +127,7 @@ public class TestTete {
 	jeanphilippe.setPrenom("Jean-Philippe");
 	jeanphilippe.setPieceIdentite("1478522");
 	jeanphilippe.setAdresse(new Adresse("4 rue de la Paix", "75009", "Paris", "France"));
+	jeanphilippe.setDtNaissance(sdf.parse("01/10/1957"));
 	
 	daoPassager.save(jeanphilippe);
 	
@@ -110,6 +136,7 @@ public class TestTete {
 	jacques.setPrenom("Jacques");
 	jacques.setPieceIdentite("155252");
 	jacques.setAdresse(new Adresse("23 avenue des Champs-Elysée", "75008", "Paris", "France"));
+	jacques.setDtNaissance(sdf.parse("22/01/1958"));
 	
 	daoPassager.save(jacques);
 	
@@ -118,6 +145,7 @@ public class TestTete {
 	francis.setPrenom("Francis");
 	francis.setPieceIdentite("122525");
 	francis.setAdresse(new Adresse("8 rue Malherbes", "75004", "Paris", "France"));
+	francis.setDtNaissance(sdf.parse("23/12/1960"));
 	
 	daoPassager.save(francis);
 	
