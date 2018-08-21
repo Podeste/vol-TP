@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Version;
 @Entity
 public class Escale {
 	@Id
@@ -75,7 +76,7 @@ public class Escale {
 	public void setVol(Vol vol) {
 		this.vol = vol;
 	}
-	
+	@Version
 	private int version;
 	public int getVersion() {
 		return version;
