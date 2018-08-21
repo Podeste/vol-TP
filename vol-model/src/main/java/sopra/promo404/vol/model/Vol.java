@@ -27,7 +27,7 @@ public class Vol {
 	@OneToMany
 	@JoinColumn
 	private List<Escale> escales = new ArrayList<>();
-	@OneToMany
+	@OneToMany(mappedBy="vol")
 	private List<Reservation> reservations = new ArrayList<>();
 	@OneToOne
 	private Aeroport depart;
