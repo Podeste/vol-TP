@@ -81,7 +81,7 @@ public class DaoVolJpa implements IDaoVol{
 			tx = em.getTransaction();
 			tx.begin();
 
-			if (em.find(Vol.class, entity.getId()) == null) {
+			if (entity.getId() == null) {
 				em.persist(entity);
 			} else {
 				entity = em.merge(entity);

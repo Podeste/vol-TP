@@ -82,7 +82,7 @@ public class DaoReservationJpa implements IDaoReservation {
 			tx = em.getTransaction();
 			tx.begin();
 
-			if (em.find(Reservation.class, entity.getId()) == null) {
+			if (entity.getId() == null) {
 				em.persist(entity);
 			} else {
 				entity = em.merge(entity);
