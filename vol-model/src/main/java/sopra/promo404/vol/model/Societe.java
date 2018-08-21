@@ -1,7 +1,13 @@
 package sopra.promo404.vol.model;
 
-public class Societe extends Client {
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 
+@Entity
+@DiscriminatorValue("societe")
+public class Societe extends Client {
+@Enumerated
 	private FormeJuridique formeJuridique;
 	private String siret;
 

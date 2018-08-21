@@ -3,14 +3,34 @@ package sopra.promo404.vol.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Client {
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
+import javax.persistence.Version;
 
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "disc", discriminatorType = DiscriminatorType.STRING, length = 20)
+public abstract class Client {
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Version
+	private int version; 
 	private String nom;
 	private String numeroTel;
 	private String numeroFax;
 	private String email;
+	@OneToOne
 	private Login login;
+	@Embedded
 	private Adresse adresse;
 	private List<Reservation> reservations = new ArrayList<>();
 

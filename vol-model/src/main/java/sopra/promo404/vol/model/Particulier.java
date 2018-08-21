@@ -1,7 +1,13 @@
 package sopra.promo404.vol.model;
 
-public class Particulier extends Client {
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 
+@Entity
+@DiscriminatorValue("particulier")
+public class Particulier extends Client {
+@Enumerated
 	private Civilite civilite;
 	private String prenom;
 

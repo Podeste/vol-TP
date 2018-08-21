@@ -1,11 +1,23 @@
 package sopra.promo404.vol.model;
 
-public class Login {
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Version;
 
+@Entity
+public class Login {
+@Id
+@GeneratedValue
 	private Long id;
+	@Version
+	private int version; 
 	private String identifiant;
 	private String motDePasse;
 	private Boolean admin;
+	@OneToOne(mappedBy = "login", fetch = FetchType.EAGER)
 	private Client client;
 
 	public Login() {

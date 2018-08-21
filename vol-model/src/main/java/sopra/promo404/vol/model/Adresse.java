@@ -1,5 +1,10 @@
 package sopra.promo404.vol.model;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+
+@Entity
+@Embeddable
 public class Adresse {
 
 	private String rue;

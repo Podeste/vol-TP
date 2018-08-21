@@ -4,13 +4,25 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Passager {
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Version;
 
+@Entity
+public class Passager {
+@Id
+@GeneratedValue
 	private Long id;
+	@Version
+	private int version; 
 	private String nom;
 	private String prenom;
 	private Date dtNaissance;
 	private String pieceIdentite;
+	@Embedded
 	private Adresse adresse;
 	private List<Reservation> reservations = new ArrayList<>();
 
