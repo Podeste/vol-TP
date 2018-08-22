@@ -1,6 +1,5 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import sopra.promo404.vol.Singleton;
 import sopra.promo404.vol.dao.IDaoAeroport;
@@ -34,6 +33,7 @@ public class TestGlobalVal {
 
 	public static void main(String[] args) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
 		IDaoAeroportVille daoAeroportVille = Singleton.getInstance().getDaoAeroportVille();
 		IDaoAeroport daoAeroport = Singleton.getInstance().getDaoAeroport();
@@ -49,28 +49,28 @@ public class TestGlobalVal {
 
 		Reservation resa1 = new Reservation();
 		resa1.setCode("codeResa1");
-		resa1.setDtResa(new Date(118, 1, 24, 12, 40));
+		resa1.setDtResa(sdf2.parse("2018-12-24 12:40"));
 		resa1.setConfirmee(false);
 		resa1.setAnnulee(false);
 		daoReservation.save(resa1);
 
 		Reservation resa2 = new Reservation();
 		resa2.setCode("codeResa2");
-		resa2.setDtResa(new Date(118, 4, 12, 20, 00));
+		resa2.setDtResa(sdf2.parse("2018-04-12 20:00"));
 		resa2.setConfirmee(true);
 		resa2.setAnnulee(false);
 		daoReservation.save(resa2);
 
 		Reservation resa3 = new Reservation();
 		resa3.setCode("codeResa3");
-		resa3.setDtResa(new Date(118, 7, 10, 10, 38));
+		resa3.setDtResa(sdf2.parse("2018-07-10 10:38"));
 		resa3.setConfirmee(false);
 		resa3.setAnnulee(false);
 		daoReservation.save(resa3);
 
 		Reservation resa4 = new Reservation();
 		resa4.setCode("codeResa4");
-		resa4.setDtResa(new Date(118, 8, 20, 8, 13));
+		resa4.setDtResa(sdf2.parse("2018-08-20 08:13"));
 		resa4.setConfirmee(true);
 		resa4.setAnnulee(true);
 		daoReservation.save(resa4);
@@ -97,8 +97,8 @@ public class TestGlobalVal {
 		daoAeroport.save(merignac);
 
 		Vol vol1 = new Vol();
-		vol1.setDtDepart(new Date(118, 2, 3, 12, 00));
-		vol1.setDtArrivee(new Date(118, 2, 3, 16, 00));
+		vol1.setDtDepart(sdf2.parse("2018-02-03 12:00"));
+		vol1.setDtArrivee(sdf2.parse("2018-02-03 16:00"));
 		vol1.setNbPlace(50);
 		vol1.setOuvert(true);
 		vol1.setDepart(jfk);
@@ -106,8 +106,8 @@ public class TestGlobalVal {
 		daoVol.save(vol1);
 
 		Vol vol2 = new Vol();
-		vol2.setDtDepart(new Date(118, 5, 23, 23, 50));
-		vol2.setDtArrivee(new Date(118, 5, 24, 10, 00));
+		vol2.setDtDepart(sdf2.parse("2018-05-23 23:50"));
+		vol2.setDtArrivee(sdf2.parse("2018-05-24 10:00"));
 		vol2.setNbPlace(12);
 		vol2.setOuvert(true);
 		vol2.setDepart(merignac);
@@ -115,8 +115,8 @@ public class TestGlobalVal {
 		daoVol.save(vol2);
 
 		Vol vol3 = new Vol();
-		vol3.setDtDepart(new Date(118, 8, 14, 19, 37));
-		vol3.setDtArrivee(new Date(118, 8, 14, 22, 40));
+		vol3.setDtDepart(sdf2.parse("2018-08-14 19:37"));
+		vol3.setDtArrivee(sdf2.parse("2018-08-14 22:40"));
 		vol3.setNbPlace(148);
 		vol3.setOuvert(true);
 		vol3.setDepart(orly);
@@ -124,8 +124,8 @@ public class TestGlobalVal {
 		daoVol.save(vol3);
 
 		Vol vol4 = new Vol();
-		vol4.setDtDepart(new Date(118, 12, 22, 8, 24));
-		vol4.setDtArrivee(new Date(118, 12, 22, 10, 55));
+		vol4.setDtDepart(sdf2.parse("2018-12-22 08:24"));
+		vol4.setDtArrivee(sdf2.parse("2018-12-22 10:55"));
 		vol4.setNbPlace(3);
 		vol4.setOuvert(true);
 		vol4.setDepart(cdg);
@@ -133,23 +133,23 @@ public class TestGlobalVal {
 		daoVol.save(vol4);
 
 		Escale escale1 = new Escale();
-		escale1.sethArrivee(new Date(118, 1, 3, 12, 50));
-		escale1.sethDepart(new Date(118, 1, 3, 12, 55));
+		escale1.sethArrivee(sdf2.parse("2018-01-03 12:50"));
+		escale1.sethDepart(sdf2.parse("2018-01-03 12:55"));
 		daoEscale.save(escale1);
 
 		Escale escale2 = new Escale();
-		escale2.sethArrivee(new Date(118, 1, 3, 14, 25));
-		escale2.sethDepart(new Date(118, 1, 3, 14, 30));
+		escale2.sethArrivee(sdf2.parse("2018-01-03 14:25"));
+		escale2.sethDepart(sdf2.parse("2018-01-03 14:30"));
 		daoEscale.save(escale2);
 
 		Escale escale3 = new Escale();
-		escale3.sethArrivee(new Date(118, 4, 24, 6, 40));
-		escale3.sethDepart(new Date(118, 4, 24, 6, 42));
+		escale3.sethArrivee(sdf2.parse("2018-04-24 06:40"));
+		escale3.sethDepart(sdf2.parse("2018-04-24 06:42"));
 		daoEscale.save(escale3);
 
 		Escale escale4 = new Escale();
-		escale4.sethArrivee(new Date(118, 7, 14, 20, 50));
-		escale4.sethDepart(new Date(118, 7, 14, 20, 54));
+		escale4.sethArrivee(sdf2.parse("2018-07-14 20:50"));
+		escale4.sethDepart(sdf2.parse("2018-07-14 20:54"));
 		daoEscale.save(escale4);
 
 		Ville paris = new Ville();
