@@ -30,5 +30,9 @@ public class Societe extends Client {
 		this.siret = siret;
 	}
 
+
+		
+	}
+
 	
-}
+
