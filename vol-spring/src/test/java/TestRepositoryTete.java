@@ -1,7 +1,9 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import sopra.promo404.vol.Singleton;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
 import sopra.promo404.vol.dao.IRepositoryClient;
 import sopra.promo404.vol.dao.IRepositoryLogin;
 import sopra.promo404.vol.dao.IRepositoryPassager;
@@ -14,14 +16,16 @@ import sopra.promo404.vol.model.Particulier;
 import sopra.promo404.vol.model.Passager;
 import sopra.promo404.vol.model.Societe;
 
-public class TestTete {
+public class TestRepositoryTete {
 
 	public static void main(String[] args) throws ParseException {
+		
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:application-context.xml"); 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-		IRepositoryClient daoClient = Singleton.getInstance().getDaoClient();
-		IRepositoryPassager daoPassager = Singleton.getInstance().getDaoPassager();
-		IRepositoryLogin daoLogin = Singleton.getInstance().getDaoLogin();
+		IRepositoryClient daoClient = context.getBean(IRepositoryClient.class);
+		IRepositoryPassager daoPassager = context.getBean(IRepositoryPassager.class); 
+		IRepositoryLogin daoLogin = context.getBean(IRepositoryLogin.class);
 
 		Login bute = new Login();
 		bute.setIdentifiant("Buuut");
