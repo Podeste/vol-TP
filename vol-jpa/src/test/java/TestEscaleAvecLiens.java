@@ -22,10 +22,10 @@ public class TestEscaleAvecLiens {
 		List<Aeroport> aeroports = daoAeroport.findAll();
 		List<Vol> vols = daoVol.findAll();
 		
-//		escales.get(0).setAeroport(aeroports.get(4));
-//		escales.get(1).setAeroport(aeroports.get(1));
-//		escales.get(2).setAeroport(aeroports.get(2));
-//		escales.get(3).setAeroport(aeroports.get(0));
+		escales.get(0).setAeroport(aeroports.get(4));
+		escales.get(1).setAeroport(aeroports.get(1));
+		escales.get(2).setAeroport(aeroports.get(2));
+		escales.get(3).setAeroport(aeroports.get(0));
 
 //		vols.get(0).getEscales().add(escales.get(0));
 //		vols.get(0).getEscales().add(escales.get(1));
