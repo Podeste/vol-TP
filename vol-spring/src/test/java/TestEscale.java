@@ -3,14 +3,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoEscale;
+import sopra.promo404.vol.dao.IRepositoryEscale;
 import sopra.promo404.vol.model.Escale;
 
 public class TestEscale {
 	public static void main(String[] args) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-		IDaoEscale daoEscale = Singleton.getInstance().getDaoEscale();
+		IRepositoryEscale daoEscale = Singleton.getInstance().getDaoEscale();
 
 		Escale escale1 = new Escale();
 		escale1.sethArrivee(new Date(118,1,3,12,50));

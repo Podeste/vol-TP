@@ -3,17 +3,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoAeroport;
-import sopra.promo404.vol.dao.IDaoAeroportVille;
-import sopra.promo404.vol.dao.IDaoClient;
-import sopra.promo404.vol.dao.IDaoCompagnieAerienne;
-import sopra.promo404.vol.dao.IDaoCompagnieAerienneVol;
-import sopra.promo404.vol.dao.IDaoEscale;
-import sopra.promo404.vol.dao.IDaoLogin;
+import sopra.promo404.vol.dao.IRepositoryAeroport;
+import sopra.promo404.vol.dao.IRepositoryAeroportVille;
+import sopra.promo404.vol.dao.IRepositoryClient;
+import sopra.promo404.vol.dao.IRepositoryCompagnieAerienne;
+import sopra.promo404.vol.dao.IRepositoryCompagnieAerienneVol;
+import sopra.promo404.vol.dao.IRepositoryEscale;
+import sopra.promo404.vol.dao.IRepositoryLogin;
 import sopra.promo404.vol.dao.IDaoPassager;
 import sopra.promo404.vol.dao.IDaoReservation;
 import sopra.promo404.vol.dao.IDaoVille;
-import sopra.promo404.vol.dao.IDaoVol;
+import sopra.promo404.vol.dao.IRepositoryVol;
 import sopra.promo404.vol.model.Adresse;
 import sopra.promo404.vol.model.Aeroport;
 import sopra.promo404.vol.model.AeroportVille;
@@ -35,17 +35,17 @@ public class TestGlobalVal {
 	public static void main(String[] args) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-		IDaoAeroportVille daoAeroportVille = Singleton.getInstance().getDaoAeroportVille();
-		IDaoAeroport daoAeroport = Singleton.getInstance().getDaoAeroport();
+		IRepositoryAeroportVille daoAeroportVille = Singleton.getInstance().getDaoAeroportVille();
+		IRepositoryAeroport daoAeroport = Singleton.getInstance().getDaoAeroport();
 		IDaoVille daoVille = Singleton.getInstance().getDaoVille();
 		IDaoReservation daoReservation = Singleton.getInstance().getDaoReservation();
-		IDaoVol daoVol = Singleton.getInstance().getDaoVol();
-		IDaoEscale daoEscale = Singleton.getInstance().getDaoEscale();
-		IDaoCompagnieAerienne daoCompagnieAerienne = Singleton.getInstance().getDaoCompagnieAerienne();
-		IDaoCompagnieAerienneVol daoCompagnieAerienneVol = Singleton.getInstance().getDaoCompagnieAerienneVol();
-		IDaoClient daoClient = Singleton.getInstance().getDaoClient();
+		IRepositoryVol daoVol = Singleton.getInstance().getDaoVol();
+		IRepositoryEscale daoEscale = Singleton.getInstance().getDaoEscale();
+		IRepositoryCompagnieAerienne daoCompagnieAerienne = Singleton.getInstance().getDaoCompagnieAerienne();
+		IRepositoryCompagnieAerienneVol daoCompagnieAerienneVol = Singleton.getInstance().getDaoCompagnieAerienneVol();
+		IRepositoryClient daoClient = Singleton.getInstance().getDaoClient();
 		IDaoPassager daoPassager = Singleton.getInstance().getDaoPassager();
-		IDaoLogin daoLogin = Singleton.getInstance().getDaoLogin();
+		IRepositoryLogin daoLogin = Singleton.getInstance().getDaoLogin();
 
 		Reservation resa1 = new Reservation();
 		resa1.setCode("codeResa1");

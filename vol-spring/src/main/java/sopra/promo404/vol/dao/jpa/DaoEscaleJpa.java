@@ -8,10 +8,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoEscale;
+import sopra.promo404.vol.dao.IRepositoryEscale;
 import sopra.promo404.vol.model.Escale;
 
-public class DaoEscaleJpa implements IDaoEscale{
+public class DaoEscaleJpa implements IRepositoryEscale{
 	@Override
 	public List<Escale> findAll() {
 		List<Escale> liste = new ArrayList<>();

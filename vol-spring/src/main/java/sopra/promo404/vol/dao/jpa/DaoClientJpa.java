@@ -8,13 +8,13 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoClient;
+import sopra.promo404.vol.dao.IRepositoryClient;
 import sopra.promo404.vol.model.Client;
 import sopra.promo404.vol.model.Client;
 import sopra.promo404.vol.model.Client;
 import sopra.promo404.vol.model.Client;
 
-public class DaoClientJpa implements IDaoClient {
+public class DaoClientJpa implements IRepositoryClient {
 
 	@Override
 	public List<Client> findAll() {

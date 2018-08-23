@@ -8,10 +8,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoAeroport;
+import sopra.promo404.vol.dao.IRepositoryAeroport;
 import sopra.promo404.vol.model.Aeroport;
 
-public class DaoAeroportJpa implements IDaoAeroport {
+public class DaoAeroportJpa implements IRepositoryAeroport {
 	@Override
 	public List<Aeroport> findAll() {
 		List<Aeroport> liste = new ArrayList<>();

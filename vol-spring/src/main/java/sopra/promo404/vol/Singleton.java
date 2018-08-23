@@ -3,17 +3,17 @@ package sopra.promo404.vol;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import sopra.promo404.vol.dao.IDaoAeroport;
-import sopra.promo404.vol.dao.IDaoAeroportVille;
-import sopra.promo404.vol.dao.IDaoClient;
-import sopra.promo404.vol.dao.IDaoCompagnieAerienne;
-import sopra.promo404.vol.dao.IDaoCompagnieAerienneVol;
-import sopra.promo404.vol.dao.IDaoEscale;
-import sopra.promo404.vol.dao.IDaoLogin;
+import sopra.promo404.vol.dao.IRepositoryAeroport;
+import sopra.promo404.vol.dao.IRepositoryAeroportVille;
+import sopra.promo404.vol.dao.IRepositoryClient;
+import sopra.promo404.vol.dao.IRepositoryCompagnieAerienne;
+import sopra.promo404.vol.dao.IRepositoryCompagnieAerienneVol;
+import sopra.promo404.vol.dao.IRepositoryEscale;
+import sopra.promo404.vol.dao.IRepositoryLogin;
 import sopra.promo404.vol.dao.IDaoPassager;
 import sopra.promo404.vol.dao.IDaoReservation;
 import sopra.promo404.vol.dao.IDaoVille;
-import sopra.promo404.vol.dao.IDaoVol;
+import sopra.promo404.vol.dao.IRepositoryVol;
 import sopra.promo404.vol.dao.jpa.DaoAeroportJpa;
 import sopra.promo404.vol.dao.jpa.DaoAeroportVilleJpa;
 import sopra.promo404.vol.dao.jpa.DaoClientJpa;
@@ -31,17 +31,17 @@ public class Singleton {
 
 	private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("vol");
 
-	private final IDaoClient daoClient = new DaoClientJpa();
-	private final IDaoLogin daoLogin = new DaoLoginJpa();
+	private final IRepositoryClient daoClient = new DaoClientJpa();
+	private final IRepositoryLogin daoLogin = new DaoLoginJpa();
 	private final IDaoReservation daoReservation = new DaoReservationJpa();
-	private final IDaoVol daoVol = new DaoVolJpa();
+	private final IRepositoryVol daoVol = new DaoVolJpa();
 	private final IDaoPassager daoPassager = new DaoPassagerJpa();
-	private final IDaoAeroport daoAeroport = new DaoAeroportJpa();
-	private final IDaoEscale daoEscale = new DaoEscaleJpa();
+	private final IRepositoryAeroport daoAeroport = new DaoAeroportJpa();
+	private final IRepositoryEscale daoEscale = new DaoEscaleJpa();
 	private final IDaoVille daoVille = new DaoVilleJpa();
-	private final IDaoAeroportVille daoAeroportVille = new DaoAeroportVilleJpa();
-	private final IDaoCompagnieAerienne daoCompagnieAerienne = new DaoCompagnieAerienneJpa();
-	private final IDaoCompagnieAerienneVol daoCompagnieAerienneVol = new DaoCompagnieAerienneVolJpa();
+	private final IRepositoryAeroportVille daoAeroportVille = new DaoAeroportVilleJpa();
+	private final IRepositoryCompagnieAerienne daoCompagnieAerienne = new DaoCompagnieAerienneJpa();
+	private final IRepositoryCompagnieAerienneVol daoCompagnieAerienneVol = new DaoCompagnieAerienneVolJpa();
 
 	private Singleton() {
 	}
@@ -57,11 +57,11 @@ public class Singleton {
 		return emf;
 	}
 
-	public IDaoClient getDaoClient() {
+	public IRepositoryClient getDaoClient() {
 		return daoClient;
 	}
 
-	public IDaoLogin getDaoLogin() {
+	public IRepositoryLogin getDaoLogin() {
 		return daoLogin;
 	}
 
@@ -69,7 +69,7 @@ public class Singleton {
 		return daoReservation;
 	}
 
-	public IDaoVol getDaoVol() {
+	public IRepositoryVol getDaoVol() {
 		return daoVol;
 	}
 
@@ -77,11 +77,11 @@ public class Singleton {
 		return daoPassager;
 	}
 
-	public IDaoAeroport getDaoAeroport() {
+	public IRepositoryAeroport getDaoAeroport() {
 		return daoAeroport;
 	}
 
-	public IDaoEscale getDaoEscale() {
+	public IRepositoryEscale getDaoEscale() {
 		return daoEscale;
 	}
 
@@ -89,15 +89,15 @@ public class Singleton {
 		return daoVille;
 	}
 
-	public IDaoAeroportVille getDaoAeroportVille() {
+	public IRepositoryAeroportVille getDaoAeroportVille() {
 		return daoAeroportVille;
 	}
 
-	public IDaoCompagnieAerienne getDaoCompagnieAerienne() {
+	public IRepositoryCompagnieAerienne getDaoCompagnieAerienne() {
 		return daoCompagnieAerienne;
 	}
 
-	public IDaoCompagnieAerienneVol getDaoCompagnieAerienneVol() {
+	public IRepositoryCompagnieAerienneVol getDaoCompagnieAerienneVol() {
 		return daoCompagnieAerienneVol;
 	}
 	

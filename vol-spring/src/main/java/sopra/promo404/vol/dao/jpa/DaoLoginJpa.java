@@ -9,10 +9,10 @@ import javax.persistence.Query;
 
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoLogin;
+import sopra.promo404.vol.dao.IRepositoryLogin;
 import sopra.promo404.vol.model.Login;
 
-public class DaoLoginJpa implements IDaoLogin{
+public class DaoLoginJpa implements IRepositoryLogin{
 
 	@Override
 	public List<Login> findAll() {

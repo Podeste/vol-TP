@@ -1,12 +1,12 @@
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoCompagnieAerienneVol;
+import sopra.promo404.vol.dao.IRepositoryCompagnieAerienneVol;
 import sopra.promo404.vol.model.CompagnieAerienneVol;
 
 public class TestCompagnieAerienneVol {
 
 	public static void main(String[] args) {
 
-		IDaoCompagnieAerienneVol daoCompagnieAerienneVol = Singleton.getInstance().getDaoCompagnieAerienneVol();
+		IRepositoryCompagnieAerienneVol daoCompagnieAerienneVol = Singleton.getInstance().getDaoCompagnieAerienneVol();
 		
 		CompagnieAerienneVol cav1 = new CompagnieAerienneVol();
 		cav1.setNumero("cavNum1");

@@ -1,14 +1,14 @@
 import java.util.Date;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoVol;
+import sopra.promo404.vol.dao.IRepositoryVol;
 import sopra.promo404.vol.model.Vol;
 
 public class TestVol {
 
 	public static void main(String[] args) {
 
-		IDaoVol daoVol = Singleton.getInstance().getDaoVol();
+		IRepositoryVol daoVol = Singleton.getInstance().getDaoVol();
 		Vol vol1 = new Vol();
 		vol1.setDtDepart(new Date(118, 2, 3, 12, 00));
 		vol1.setDtArrivee(new Date(118, 2, 3, 16, 00));

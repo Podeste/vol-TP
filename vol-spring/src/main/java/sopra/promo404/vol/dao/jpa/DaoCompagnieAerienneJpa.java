@@ -8,10 +8,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoCompagnieAerienne;
+import sopra.promo404.vol.dao.IRepositoryCompagnieAerienne;
 import sopra.promo404.vol.model.CompagnieAerienne;
 
-public class DaoCompagnieAerienneJpa implements IDaoCompagnieAerienne {
+public class DaoCompagnieAerienneJpa implements IRepositoryCompagnieAerienne {
 	@Override
 	public List<CompagnieAerienne> findAll() {
 		List<CompagnieAerienne> liste = new ArrayList<>();

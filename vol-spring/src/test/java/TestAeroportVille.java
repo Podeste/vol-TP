@@ -1,8 +1,8 @@
 import java.text.ParseException;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoAeroport;
-import sopra.promo404.vol.dao.IDaoAeroportVille;
+import sopra.promo404.vol.dao.IRepositoryAeroport;
+import sopra.promo404.vol.dao.IRepositoryAeroportVille;
 import sopra.promo404.vol.dao.IDaoVille;
 import sopra.promo404.vol.model.Aeroport;
 import sopra.promo404.vol.model.AeroportVille;
@@ -10,8 +10,8 @@ import sopra.promo404.vol.model.Ville;
 
 public class TestAeroportVille {
 	public static void main(String[] args) throws ParseException {
-		IDaoAeroportVille daoAeroportVille = Singleton.getInstance().getDaoAeroportVille();
-		IDaoAeroport daoAeroport = Singleton.getInstance().getDaoAeroport();
+		IRepositoryAeroportVille daoAeroportVille = Singleton.getInstance().getDaoAeroportVille();
+		IRepositoryAeroport daoAeroport = Singleton.getInstance().getDaoAeroport();
 		IDaoVille daoVille = Singleton.getInstance().getDaoVille();
 		
 		AeroportVille av1 = new AeroportVille();

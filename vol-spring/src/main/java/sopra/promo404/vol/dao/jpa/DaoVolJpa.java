@@ -8,10 +8,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoVol;
+import sopra.promo404.vol.dao.IRepositoryVol;
 import sopra.promo404.vol.model.Vol;
 
-public class DaoVolJpa implements IDaoVol{
+public class DaoVolJpa implements IRepositoryVol{
 	@Override
 	public List<Vol> findAll() {
 		List<Vol> liste = new ArrayList<>();
