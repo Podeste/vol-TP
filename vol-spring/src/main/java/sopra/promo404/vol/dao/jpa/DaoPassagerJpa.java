@@ -12,10 +12,10 @@ import javax.persistence.Query;
 
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoPassager;
+import sopra.promo404.vol.dao.IRepositoryPassager;
 import sopra.promo404.vol.model.Passager;
 
-public class DaoPassagerJpa implements IDaoPassager {
+public class DaoPassagerJpa implements IRepositoryPassager {
 
 	@Override
 	public List<Passager> findAll() {

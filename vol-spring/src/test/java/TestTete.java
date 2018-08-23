@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import sopra.promo404.vol.Singleton;
 import sopra.promo404.vol.dao.IRepositoryClient;
 import sopra.promo404.vol.dao.IRepositoryLogin;
-import sopra.promo404.vol.dao.IDaoPassager;
+import sopra.promo404.vol.dao.IRepositoryPassager;
 import sopra.promo404.vol.model.Adresse;
 import sopra.promo404.vol.model.Civilite;
 import sopra.promo404.vol.model.Client;
@@ -20,7 +20,7 @@ public class TestTete {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 		IRepositoryClient daoClient = Singleton.getInstance().getDaoClient();
-		IDaoPassager daoPassager = Singleton.getInstance().getDaoPassager();
+		IRepositoryPassager daoPassager = Singleton.getInstance().getDaoPassager();
 		IRepositoryLogin daoLogin = Singleton.getInstance().getDaoLogin();
 
 		Login bute = new Login();

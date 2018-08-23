@@ -8,11 +8,11 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoVille;
+import sopra.promo404.vol.dao.IRepositoryVille;
 import sopra.promo404.vol.model.Ville;
 
 
-public class DaoVilleJpa implements IDaoVille{
+public class DaoVilleJpa implements IRepositoryVille{
 	
 	@Override
 	public List<Ville> findAll() {

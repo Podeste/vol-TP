@@ -1,14 +1,14 @@
 import java.util.Date;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoReservation;
+import sopra.promo404.vol.dao.IRepositoryReservation;
 import sopra.promo404.vol.model.Reservation;
 
 public class TestReservation {
 
 	public static void main(String[] args) {
 
-		IDaoReservation daoReservation = Singleton.getInstance().getDaoReservation();
+		IRepositoryReservation daoReservation = Singleton.getInstance().getDaoReservation();
 		Reservation resa1 = new Reservation();
 		resa1.setCode("codeResa1");
 		resa1.setDtResa(new Date(118, 1, 24, 12, 40));

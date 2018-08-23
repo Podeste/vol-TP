@@ -10,9 +10,9 @@ import sopra.promo404.vol.dao.IRepositoryCompagnieAerienne;
 import sopra.promo404.vol.dao.IRepositoryCompagnieAerienneVol;
 import sopra.promo404.vol.dao.IRepositoryEscale;
 import sopra.promo404.vol.dao.IRepositoryLogin;
-import sopra.promo404.vol.dao.IDaoPassager;
-import sopra.promo404.vol.dao.IDaoReservation;
-import sopra.promo404.vol.dao.IDaoVille;
+import sopra.promo404.vol.dao.IRepositoryPassager;
+import sopra.promo404.vol.dao.IRepositoryReservation;
+import sopra.promo404.vol.dao.IRepositoryVille;
 import sopra.promo404.vol.dao.IRepositoryVol;
 import sopra.promo404.vol.model.Adresse;
 import sopra.promo404.vol.model.Aeroport;
@@ -37,14 +37,14 @@ public class TestGlobalVal {
 
 		IRepositoryAeroportVille daoAeroportVille = Singleton.getInstance().getDaoAeroportVille();
 		IRepositoryAeroport daoAeroport = Singleton.getInstance().getDaoAeroport();
-		IDaoVille daoVille = Singleton.getInstance().getDaoVille();
-		IDaoReservation daoReservation = Singleton.getInstance().getDaoReservation();
+		IRepositoryVille daoVille = Singleton.getInstance().getDaoVille();
+		IRepositoryReservation daoReservation = Singleton.getInstance().getDaoReservation();
 		IRepositoryVol daoVol = Singleton.getInstance().getDaoVol();
 		IRepositoryEscale daoEscale = Singleton.getInstance().getDaoEscale();
 		IRepositoryCompagnieAerienne daoCompagnieAerienne = Singleton.getInstance().getDaoCompagnieAerienne();
 		IRepositoryCompagnieAerienneVol daoCompagnieAerienneVol = Singleton.getInstance().getDaoCompagnieAerienneVol();
 		IRepositoryClient daoClient = Singleton.getInstance().getDaoClient();
-		IDaoPassager daoPassager = Singleton.getInstance().getDaoPassager();
+		IRepositoryPassager daoPassager = Singleton.getInstance().getDaoPassager();
 		IRepositoryLogin daoLogin = Singleton.getInstance().getDaoLogin();
 
 		Reservation resa1 = new Reservation();

@@ -10,9 +10,9 @@ import sopra.promo404.vol.dao.IRepositoryCompagnieAerienne;
 import sopra.promo404.vol.dao.IRepositoryCompagnieAerienneVol;
 import sopra.promo404.vol.dao.IRepositoryEscale;
 import sopra.promo404.vol.dao.IRepositoryLogin;
-import sopra.promo404.vol.dao.IDaoPassager;
-import sopra.promo404.vol.dao.IDaoReservation;
-import sopra.promo404.vol.dao.IDaoVille;
+import sopra.promo404.vol.dao.IRepositoryPassager;
+import sopra.promo404.vol.dao.IRepositoryReservation;
+import sopra.promo404.vol.dao.IRepositoryVille;
 import sopra.promo404.vol.dao.IRepositoryVol;
 import sopra.promo404.vol.dao.jpa.DaoAeroportJpa;
 import sopra.promo404.vol.dao.jpa.DaoAeroportVilleJpa;
@@ -33,12 +33,12 @@ public class Singleton {
 
 	private final IRepositoryClient daoClient = new DaoClientJpa();
 	private final IRepositoryLogin daoLogin = new DaoLoginJpa();
-	private final IDaoReservation daoReservation = new DaoReservationJpa();
+	private final IRepositoryReservation daoReservation = new DaoReservationJpa();
 	private final IRepositoryVol daoVol = new DaoVolJpa();
-	private final IDaoPassager daoPassager = new DaoPassagerJpa();
+	private final IRepositoryPassager daoPassager = new DaoPassagerJpa();
 	private final IRepositoryAeroport daoAeroport = new DaoAeroportJpa();
 	private final IRepositoryEscale daoEscale = new DaoEscaleJpa();
-	private final IDaoVille daoVille = new DaoVilleJpa();
+	private final IRepositoryVille daoVille = new DaoVilleJpa();
 	private final IRepositoryAeroportVille daoAeroportVille = new DaoAeroportVilleJpa();
 	private final IRepositoryCompagnieAerienne daoCompagnieAerienne = new DaoCompagnieAerienneJpa();
 	private final IRepositoryCompagnieAerienneVol daoCompagnieAerienneVol = new DaoCompagnieAerienneVolJpa();
@@ -65,7 +65,7 @@ public class Singleton {
 		return daoLogin;
 	}
 
-	public IDaoReservation getDaoReservation() {
+	public IRepositoryReservation getDaoReservation() {
 		return daoReservation;
 	}
 
@@ -73,7 +73,7 @@ public class Singleton {
 		return daoVol;
 	}
 
-	public IDaoPassager getDaoPassager() {
+	public IRepositoryPassager getDaoPassager() {
 		return daoPassager;
 	}
 
@@ -85,7 +85,7 @@ public class Singleton {
 		return daoEscale;
 	}
 
-	public IDaoVille getDaoVille() {
+	public IRepositoryVille getDaoVille() {
 		return daoVille;
 	}
 

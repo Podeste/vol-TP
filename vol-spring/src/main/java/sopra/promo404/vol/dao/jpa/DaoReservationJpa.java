@@ -8,10 +8,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoReservation;
+import sopra.promo404.vol.dao.IRepositoryReservation;
 import sopra.promo404.vol.model.Reservation;
 
-public class DaoReservationJpa implements IDaoReservation {
+public class DaoReservationJpa implements IRepositoryReservation {
 
 	@Override
 	public List<Reservation> findAll() {

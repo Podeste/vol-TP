@@ -2,7 +2,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import sopra.promo404.vol.Singleton;
-import sopra.promo404.vol.dao.IDaoVille;
+import sopra.promo404.vol.dao.IRepositoryVille;
 import sopra.promo404.vol.model.Ville;
 
 
@@ -11,7 +11,7 @@ public class TestVille {
 	public static void main(String[] args) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-		IDaoVille daoVille = Singleton.getInstance().getDaoVille();
+		IRepositoryVille daoVille = Singleton.getInstance().getDaoVille();
 
 		Ville paris = new Ville();
 		paris.setCodePostal("75001");
