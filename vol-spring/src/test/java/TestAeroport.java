@@ -1,16 +1,13 @@
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import sopra.promo404.vol.Singleton;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import sopra.promo404.vol.dao.IRepositoryAeroport;
 import sopra.promo404.vol.model.Aeroport;
 
 public class TestAeroport {
 	public static void main(String[] args) throws ParseException {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
-		IRepositoryAeroport daoAeroport = Singleton.getInstance().getDaoAeroport();
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+				"classpath:application-context.xml");
+		IRepositoryAeroport daoAeroport = context.getBean(IRepositoryAeroport.class);
 
 		Aeroport jfk = new Aeroport();
 		jfk.setCode("JFK");

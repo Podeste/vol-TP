@@ -15,7 +15,7 @@
 
 	<!-- Activation des annotations et précision sur le(s) package(s) à scanner -->
 	<context:component-scan
-		base-package="sopra.promo404.vol.dao.jpa" />
+		base-package="sopra.promo404.vol.dao" />
 
 	<!-- Datasource avec pooling de connexion -->
 	<bean id="dataSource"
@@ -33,7 +33,7 @@
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="eshop.model" />
+		<property name="packagesToScan" value="sopra.promo404.vol.model" />
 
 		<!-- On précise le provider ... -->
 		<property name="jpaVendorAdapter">
