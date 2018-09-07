@@ -18,3 +18,11 @@ vol-spring/target/
 vol-spring/\.classpath
 
 vol-spring/\.project
+
+vol-web-spring/\.settings/
+
+vol-web-spring/target/
+
+vol-web-spring/\.classpath
+
+vol-web-spring/\.project
