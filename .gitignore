@@ -10,3 +10,11 @@ vol-model/\.settings/
 vol-model/\.classpath
 
 vol-model/\.project
+
+vol-spring/\.settings/
+
+vol-spring/target/
+
+vol-spring/\.classpath
+
+vol-spring/\.project
