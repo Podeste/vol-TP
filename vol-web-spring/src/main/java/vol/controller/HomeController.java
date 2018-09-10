@@ -13,7 +13,7 @@ public class HomeController {
 		
 		model.addAttribute("monNom", nom);
 		
-		return "home";
+		return "home/homeForm";
 	}
 
 }

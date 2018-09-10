@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -12,6 +13,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -29,9 +32,9 @@ public class Passager {
 	private String pieceIdentite;
 	@Embedded
 	private Adresse adresse;
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn
-	private Reservation reservation;
+	private Reservation reservation = new Reservation();
 
 	public Passager() {
 	}

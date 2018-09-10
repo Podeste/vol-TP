@@ -35,6 +35,7 @@
 						<th>Code postal</th>
 						<th>Ville</th>
 						<th>Pays</th>
+						<th>Réservation</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -54,6 +55,7 @@
 							<td>${passager.adresse.codePostal}</td>
 							<td>${passager.adresse.ville}</td>
 							<td>${passager.adresse.pays}</td>
+							<td>${passager.reservation.code}</td>
 
 							<td><a href="passager/edit/${passager.id}"
 								class="btn btn-info btn-sm">Editer</a> <a

@@ -95,33 +95,18 @@
 					</div>
 				</div>
 
-				<!-- 				<div class="form-group row"> -->
-				<!-- 					<label class="col-sm-2 col-form-label">Formateur</label> -->
-				<!-- 					<div class="col-sm-10"> -->
-				<!-- 						<select class="custom-select" name="formateur.id" required> -->
-				<!-- 							<option value=""></option> -->
-				<%-- 							<c:forEach items="${formateurs}" var="forma"> --%>
-				<%-- 								<option value="${forma.id}" --%>
-				<%-- 									${monEleve.formateur.id eq forma.id?'selected':''}>${forma.prenom} --%>
-				<%-- 									${forma.nom}</option> --%>
-				<%-- 							</c:forEach> --%>
-				<!-- 						</select> -->
-				<!-- 					</div> -->
-				<!-- 				</div> -->
-
-				<!-- 				<div class="form-group row"> -->
-				<!-- 					<label class="col-sm-2 col-form-label">Ordinateur</label> -->
-				<!-- 					<div class="col-sm-10"> -->
-				<!-- 						<select class="custom-select" name="ordinateur.code" required> -->
-				<!-- 							<option value=""></option> -->
-				<%-- 							<c:forEach items="${ordinateurs}" var="ordi"> --%>
-				<%-- 								<option value="${ordi.code}" --%>
-				<%-- 									${monEleve.ordinateur.code eq ordi.code?'selected':''}>${ordi.code} --%>
-				<%-- 									- ${ordi.ram} (${ordi.ssd?'avec SSD':'sans SSD'})</option> --%>
-				<%-- 							</c:forEach> --%>
-				<!-- 						</select> -->
-				<!-- 					</div> -->
-				<!-- 				</div> -->
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Réservation</label>
+					<div class="col-sm-10">
+						<select class="custom-select" name="reservation.id" required>
+							<option value=""></option>
+							<c:forEach items="${reservations}" var="resa">
+								<option value="${resa.id}"
+									${passager.reservation.id eq resa.id?'selected':''}>${resa.code}</option>
+							</c:forEach>
+						</select>
+					</div>
+				</div>
 
 				<div class="form-group row">
 					<div class="col-sm-2"></div>

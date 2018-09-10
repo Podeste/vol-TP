@@ -3,6 +3,7 @@ package sopra.promo404.vol.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,7 +24,7 @@ public class Reservation {
 	private Date dtResa;
 	private Boolean confirmee;
 	private Boolean annulee;
-	@OneToOne
+	@OneToOne(mappedBy = "reservation", fetch = FetchType.EAGER)
 	@JoinColumn
 	private Passager passager;
 	@ManyToOne
