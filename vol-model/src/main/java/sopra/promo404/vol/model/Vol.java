@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Version;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Vol {
 
@@ -20,7 +22,9 @@ public class Vol {
 	private Long id;
 	@Version
 	private int version;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dtDepart;
+	@DateTimeFormat(pattern="yyyy-MM-dd") 
 	private Date dtArrivee;
 	private Integer nbPlace;
 	private Boolean ouvert;

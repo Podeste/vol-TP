@@ -27,7 +27,7 @@ public class VolController {
 	public String list(Model model) {
 		List<Vol> vols = volRepo.findAll();
 
-		model.addAttribute("mesVols", vols);
+		model.addAttribute("vols", vols);
 
 		return "vol/vols";
 	}

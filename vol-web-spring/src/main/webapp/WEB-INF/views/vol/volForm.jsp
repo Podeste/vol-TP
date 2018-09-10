@@ -25,16 +25,16 @@
 
 		<section>
 			<form action="vol/save" method="post">
-				<input type="hidden" name="action" value="save" /> <input
-					type="hidden" name="id" id="id" value="${vol.id}" /> <input
-					type="hidden" name="version" id="version" value="${vol.version}" />
+				
+				<input type="hidden" name="id" id="id" value="${monVol.id}" /> 
+				<input type="hidden" name="version" id="version" value="${monVol.version}" />
 
 				<div class="form-group row">
 					<label class="col-sm-2 col-form-label">Date de départ</label>
 					<div class="col-sm-10">
 						<input type="date" step="1" class="form-control" name="dtDepart"
 							id="dtDepart" placeholder="La date de départ"
-							value="${vol.dtDepart}" />
+							value="${monVol.dtDepart}" />
 					</div>
 				</div>
 
@@ -43,7 +43,7 @@
 					<div class="col-sm-10">
 						<input type="date" step="1" class="form-control" name="dtArrivee"
 							id="dtArrivee" placeholder="La date d'arrivée"
-							value="${vol.dtArrivee}" />
+							value="${monVol.dtArrivee}" />
 					</div>
 				</div>
 
@@ -57,11 +57,21 @@
 				</div>
 
 				<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Ouvert à la réservation</label>
+					<label class="col-sm-2 col-form-label">Reservation ON/OFF</label>
 					<div class="col-sm-10">
-						<input type="number" step="1" class="form-control" name="ouvert"
-							id="ouvert" placeholder="ON / OFF" required
-							value="${monVol.ouvert}" />
+						<select class="custom-select" id="ouvert" name="ouvert" required>
+							<option value="true"> Ouvert </option>
+							<option value="false"> Fermé</option>
+						</select>
+									
+					</div>
+				</div>
+				
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Aeroport Arrivée</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="aeroport.code"
+							placeholder="aeroport arrivée" value="${monVol.depart.code}" />
 					</div>
 				</div>
 

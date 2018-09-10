@@ -34,6 +34,7 @@
 						<th>Date d'arrivée</th>
 						<th>Nombre de places</th>
 						<th>Ouvert à la réservation</th>
+						<th>Aéroport Depart</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -48,8 +49,9 @@
 							<td><fmt:formatDate value="${vol.dtArrivee}" pattern="dd/MM/yyyy" />
 							<td>${vol.nbPlace}</td>
 							<td>${vol.ouvert}</td>
+							<td>${vol.depart.code}</td>
 							<td><a href="vol/edit/${vol.id}" class="btn btn-info btn-sm">Editer</a>
-								<a href="vol/edit/${vol.id}" class="btn btn-danger btn-sm">Supprimer</a></td>
+								<a href="vol/delete/${vol.id}" class="btn btn-danger btn-sm">Supprimer</a></td>
 						</tr>
 					
 					</c:forEach>
